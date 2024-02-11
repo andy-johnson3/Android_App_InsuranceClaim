@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/activity_main">
+
+    <TextView
+        android:id="@+id/tvYourAgent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Agent:"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAgent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="40dp"
+        android:text="Agent"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/tvYourAgent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvAgentPhoneNumber"/>
+
+    <TextView
+        android:id="@+id/tvAgentPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="Agent Phone Number"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintTop_toBottomOf="@id/tvYourAgent"
+        app:layout_constraintStart_toEndOf="@+id/tvAgent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/system_blue"
+        />
+
+    <TextView
+        android:id="@+id/tvCoverageDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/coverage_details"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvLiability"/>
+
+    <TextView
+        android:id="@+id/tvLiability"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Liability:"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="italic"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvCoverageDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvLiabilityAmount"/>
+
+    <TextView
+        android:id="@+id/tvLiabilityAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Liability Amount"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/tvCoverageDetails"
+        app:layout_constraintStart_toEndOf="@+id/tvLiability"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvDeductible"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="40dp"
+        android:text="Deductible:"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/tvLiability"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvDeductibleAmount"/>
+
+    <TextView
+        android:id="@+id/tvDeductibleAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Deductible Amount"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/tvDeductible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLiabilityAmount"/>
+
+    <TextView
+        android:id="@+id/tvDrivers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drivers Covered:"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDeductible"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDrivers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrivers"/>
+
+    <TextView
+        android:id="@+id/tvAutos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Autos Covered:"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rvAutos"
+        app:layout_constraintTop_toBottomOf="@id/rvDrivers"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAutos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvAutos"/>
+
+    <Button
+        android:id="@+id/btnDarkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enable Dark Mode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mainLinearLayout">
+    </Button>
+
+    <LinearLayout
+        android:id="@+id/mainLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnSubmitClaim"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/submit_a_claim"></Button>
+
+        <Button
+            android:id="@+id/btnViewClaims"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/view_claims"></Button>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">InsuranceClaim</string>
+    <string name="aaa_insurance">AAA Insurance</string>
+    <string name="submit_a_claim">Submit a Claim</string>
+    <string name="view_claims">View Claims</string>
+    <string name="coverage_details">Coverage Details:</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="set_location">Set Location</string>
+    <string name="date">Date</string>
+    <string name="auto">Auto</string>
+    <string name="driver">Driver</string>
+    <string name="back">Back</string>
+    <string name="claim_id">Claim ID</string>
+    <string name="vehicle">Vehicle</string>
+    <string name="location">Location:</string>
+    <string name="auto2">Auto</string>
+    <string name="driver2">Driver</string>
+</resources>
